@@ -5,9 +5,9 @@
      <div class="card">
         <p>会員登録</p>
         <div class="form">
-          <input placeholder="Username" type="text" />
-          <input placeholder="Email" type="text" />
-          <input placeholder="Password" type="text" />
+          <input placeholder="Username" type="text" v-model="username" />
+          <input placeholder="Email" type="text" v-model="email" />
+          <input placeholder="Password" type="text" v-model="password" />
           <button @click="auth">登録</button>
         </div>
       </div>
@@ -17,9 +17,34 @@
 
 <script>
 import Header from "../components/Header";
+import axios from "axios";
 export default {
   components: {
     Header
+  },
+  data(){
+    return {
+      username: "",
+      email: "",
+      password: ""
+    };
+  },
+  methods: {
+    auth() {
+      axios
+      .post("https://git.heroku.com/api/register",{
+       username: this.usrename,
+       email: this.email,
+       password: this.password
+      })
+      .then(response => {
+          console.log(response);
+          this.$router.replace("/");
+        })
+        .catch(error => {
+          alert(error);
+        });
+    }
   }
 };
 </script>
