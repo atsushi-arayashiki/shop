@@ -24,7 +24,7 @@ export default {
   },
   data(){
     return {
-      username: "",
+      user_name: "",
       email: "",
       password: ""
     };
@@ -32,8 +32,8 @@ export default {
   methods: {
     auth() {
       axios
-      .post("https://git.heroku.com/api/register",{
-       username: this.usrename,
+      .post("https://git.heroku.com/api/users",{
+       user_name: this.usre_name,
        email: this.email,
        password: this.password
       })
