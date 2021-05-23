@@ -32,7 +32,7 @@ export default {
   methods: {
     auth() {
       axios
-      .post("https://git.heroku.com/api/users",{
+      .post("https://suspicious-goldstine-396a40.netlify.app/api/users",{
        user_name: this.usre_name,
        email: this.email,
        password: this.password
