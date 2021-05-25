@@ -6,7 +6,7 @@
      <div class="reservations">
       <p>予約状況</p>
       <div class="reservations-card">
-       
+       <p>yoyakku</p>
       </div>
      </div>
      <div class="like-shop">
