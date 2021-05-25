@@ -16,7 +16,7 @@ const routes = [
     component: Login,
   },
   {
-    path: "/api/users",
+    path: "/users",
     name: "User",
     component: User,
   },
