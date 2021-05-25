@@ -6,7 +6,6 @@ import Thanks from "../views/Thanks.vue";
 import Done from "../views/Done.vue";
 import Shop from "../views/Shop.vue";
 import store from "../store/index";
-import Mypage from "../views/Mypage.vue";
 
 Vue.use(VueRouter);
 
@@ -36,11 +35,6 @@ const routes = [
     name: "Shop",
     component: Shop,
   },
-  {
-    path: "/mypage",
-    name: "Mypage",
-    component: Mypage,
-  }
 ];
 
 const router = new VueRouter({
