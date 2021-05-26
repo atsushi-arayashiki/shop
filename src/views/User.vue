@@ -5,7 +5,7 @@
      <div class="card">
         <p>会員登録</p>
         <div class="form">
-          <input placeholder="Username" type="text" v-model="username" />
+          <input placeholder="User_name" type="text" v-model="user_name" />
           <input placeholder="Email" type="text" v-model="email" />
           <input placeholder="Password" type="text" v-model="password" />
           <button @click="auth">登録</button>
@@ -33,7 +33,7 @@ export default {
     auth() {
       axios
       .post("https://cryptic-refuge-03228.herokuapp.com/api/users",{
-       user_name: this.usre_name,
+       user_name: this.user_name,
        email: this.email,
        password: this.password
       })
