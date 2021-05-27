@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header />
+    <p>popoppo</p>
   </div>
 </template>
 
