@@ -4,7 +4,7 @@
   <div class="thanks">
    <p>会員登録ありがとうございます</p>
    <div class="login-button">
-       <router-link :to="{name:'Login'}">ログインする</router-link>
+       <router-link :to="{name:'Login'}"><button>ログインする</button></router-link>
    </div>
   </div>
 </div>
