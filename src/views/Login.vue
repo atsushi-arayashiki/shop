@@ -7,41 +7,13 @@
         <input placeholder="user_name" type="text" v-model="user_name">
         <input placeholder="Password" type="text" v-model="password">
       </div>
-      <button @click="auth">ログインする</button>
+      <button >ログインする</button>
     </div>
   </div>
 </template>
 
 <script>
-import Header from "../components/Header";
-import axios from "axios";
-export default {
-  components: {
-    Header
-  },
-  data(){
-    return {
-      user_name: "",
-      password: ""
-    };
-  },
-  methods: {
-    auth() {
-      axios
-      .get("https://shielded-ridge-86495.herokuapp.com/api/users",{
-       user_name: this.user_name,
-       password: this.password
-      })
-      .then(response => {
-          console.log(response);
-          this.$router.replace("/");
-        })
-        .catch(error => {
-          alert(error);
-        });
-    }
-  }
-}
+
 </script>
 
 <style>
