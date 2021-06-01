@@ -32,8 +32,7 @@ export default {
   methods: {
     auth() {
       axios
-      .post("https://shielded-ridge-86495.herokuapp.com/users",{
-       user_id: this.user_id,
+      .post("https://shielded-ridge-86495.herokuapp.com/api/users",{
        user_name: this.user_name,
        email: this.email,
        password: this.password
