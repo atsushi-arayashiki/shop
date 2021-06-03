@@ -32,7 +32,7 @@ export default {
   methods: {
     auth() {
       axios
-      .post("https://shielded-ridge-86495.herokuapp.com/api/users",{
+      .post("http://127.0.0.1:8000/users",{
        user_name: this.user_name,
        email: this.email,
        password: this.password

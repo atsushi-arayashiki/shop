@@ -28,7 +28,7 @@ export default {
   methods: {
     auth() {
       axios
-      .post("https://shielded-ridge-86495.herokuapp.com/api/users",{
+      .post("http://localhost:8080/users",{
        user_name: this.user_name,
        password: this.password
       })
