@@ -32,7 +32,7 @@ export default {
   methods: {
     auth() {
       axios
-      .post("http://127.0.0.1:8000/users",{
+      .post("http://127.0.0.1:8000/api/users",{
        user_name: this.user_name,
        email: this.email,
        password: this.password
