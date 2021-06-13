@@ -4,8 +4,8 @@
     <div class="login">
       <p class="login-title">ログイン</p>
       <div class="rogin-form">
-        <input placeholder="user_name" type="text" v-model="user_name">
-        <input placeholder="Password" type="text" v-model="password">
+        <input placeholder="email" type="email" v-model="email" />
+        <input placeholder="Password" type="password" v-model="password" />
       </div>
       <button @click="auth">ログインする</button>
     </div>
@@ -14,31 +14,22 @@
 
 <script>
  import Header from "../components/Header";
-import axios from "axios";
 export default {
   components: {
     Header
   },
   data(){
     return {
-      user_name: "",
+      email: "",
       password: ""
     };
   },
   methods: {
     auth() {
-      axios
-      .post("http://localhost:8080/users",{
-       user_name: this.user_name,
-       password: this.password
-      })
-      .then(response => {
-          console.log(response);
-          this.$router.replace("/");
-        })
-        .catch(error => {
-          alert(error);
-        });
+      this.$store.dispatch("login",{
+        email: this.email,
+        password: this.password
+      });
     }
   }
 }

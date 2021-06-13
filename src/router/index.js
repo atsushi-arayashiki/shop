@@ -6,6 +6,7 @@ import Thanks from "../views/Thanks.vue";
 import Done from "../views/Done.vue";
 import Shop from "../views/Shop.vue";
 import store from "../store/index";
+import Mypage from "../views/Mypage";
 
 Vue.use(VueRouter);
 
@@ -29,12 +30,26 @@ const routes = [
     path: "/done",
     name: "Done",
     component: Done,
+    meta: {
+      requiresAuth: true,
+    },
   },
   {
     path: "/",
     name: "Shop",
     component: Shop,
+    meta: {
+      requiresAuth: true,
+    },
   },
+  {
+    path: "/mypage",
+    name: "Mypage",
+    component: Mypage,
+    meta: {
+      requiresAuth: true,
+    },
+  }
 ];
 
 const router = new VueRouter({
@@ -49,7 +64,7 @@ router.beforeEach((to, from, next) => {
     !store.state.auth
   ) {
     next({
-      path: "/thanks",
+      path: "/",
       query: {
         redirect: to.fullPath,
       },
