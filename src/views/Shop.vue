@@ -23,7 +23,7 @@ export default {
       shop_genre: ""
     };
   },
-  async create() {
+  async createdd() {
     const item = await axios.get(
       "http://127.0.0.1:8000/api/shops",
     );
