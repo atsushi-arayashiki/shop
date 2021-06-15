@@ -1,10 +1,10 @@
 <template>
   <div>
     <Header />
-    <p>{{shop_image}}</p>
-    <p>{{shop_name}}</p>
-    <p>{{shop_area}}</p>
-    <p>{{shop_genre}}</p>
+    <p>{{ shop_image }}</p>
+    <p>{{ shop_name }}</p>
+    <p>{{ shop_area }}</p>
+    <p>{{ shop_genre }}</p>
   </div>
 </template>
 
@@ -23,9 +23,9 @@ export default {
       shop_genre: ""
     };
   },
-  async createdd() {
+  async created() {
     const item = await axios.get(
-      "http://127.0.0.1:8000/api/shops",
+      `http://127.0.0.1:8000/api/shops`,
     );
     const shop_list = item.data;
     this.shop_image = shop_list.shop_image;
