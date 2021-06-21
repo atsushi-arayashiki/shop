@@ -3,7 +3,7 @@
     <Header />
     <div class="detail_shop_list">
      <p>{{ shop_id }}</p>
-     <p>{{ shop_name }}</p>
+     <p>{{ shop_id.shop_name }}</p>
       
     </div>
   </div>
