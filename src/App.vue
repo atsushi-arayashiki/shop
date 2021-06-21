@@ -1,7 +1,6 @@
 <template>
   <div id="app">
    <div class="main">
-       <p class="color"></p>
    </div>
    <router-view />
   </div>
@@ -104,9 +103,9 @@ input, select {
 }
 
 .main{
-  background-color:rgb(226, 247, 232);
+  background-color:black;
   min-height: 100vh;
-  background: cover;
+  background-size: auto;
 }
 
 .color{

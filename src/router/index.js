@@ -6,7 +6,8 @@ import Thanks from "../views/Thanks.vue";
 import Done from "../views/Done.vue";
 import Shop from "../views/Shop.vue";
 import store from "../store/index";
-import Mypage from "../views/Mypage";
+import Mypage from "../views/Mypage.vue";
+import Detail from "../views/Detail.vue";
 
 Vue.use(VueRouter);
 
@@ -49,7 +50,13 @@ const routes = [
     meta: {
       requiresAuth: true,
     },
-  }
+  },
+  {
+    path: "/detail/:shop_id",
+    name: "Detail",
+    component: Detail,
+    props: true,
+  },
 ];
 
 const router = new VueRouter({
