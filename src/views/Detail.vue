@@ -2,8 +2,9 @@
   <div>
     <Header />
     <div class="detail_shop_list">
+
      <p>{{ shop_id }}</p>
-     <p>{{ shop_id.shop_name }}</p>
+     <p>{{ shop_name }}</p>
       
     </div>
   </div>
@@ -30,10 +31,11 @@ export default {
   },
   methods:{
     async detailget(){
-      const item =await axios.get(
-      "http://127.0.0.1:8000/api/shop/{shop_id}"
+      const item =await axios.getDetail(
+      "http://127.0.0.1:8000/api/shop/"+this.shop_id
     );
     this.detail_list = item.data.data; 
+    console.log(this.detail_list);
     }
     
   },
