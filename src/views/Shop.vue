@@ -1,6 +1,11 @@
 <template>
   <div>
     <Header />
+    <div class="all">
+     <js-accordion></js-accordion>
+     <p>All genre</p>
+     <input type="text" v-model="search">
+    </div>
       <div class="shop_card">
         <tr v-for="item in shop_list" :key="item.item_id">
         <div class="shop_list">
@@ -115,6 +120,16 @@ export default {
 }
 .heart:hover{
  background-color: red;
+}
+.all{
+  position:absolute;
+  top: 10%;
+  left:50%;
+  background-color:rgb(85, 192, 85);
+  width: 550px;
+  padding:10px 10px 0px 10px;
+  display: flex;
+
 }
 </style>
 
