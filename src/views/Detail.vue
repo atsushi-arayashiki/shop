@@ -2,10 +2,9 @@
   <div>
     <Header />
     <div class="detail_shop_list">
-
      <p>{{ shop_id }}</p>
      <p>{{ shop_name }}</p>
-      
+     <p>{{shop_area}}</p>
     </div>
   </div>
 </template>
@@ -30,8 +29,8 @@ export default {
     };
   },
   methods:{
-    async detailget(){
-      const item =await axios.getDetail(
+    async getDetail(){
+      const item =await axios.get(
       "http://127.0.0.1:8000/api/shop/"+this.shop_id
     );
     this.detail_list = item.data.data; 
@@ -40,7 +39,7 @@ export default {
     
   },
   created(){
-    this.detailget();
+    this.getDetail();
   },
   props: ["shop_id"]
 };
