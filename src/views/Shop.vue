@@ -2,9 +2,25 @@
   <div>
     <Header />
     <div class="all">
-     <js-accordion></js-accordion>
-     <p>All genre</p>
-     <input type="text" v-model="search">
+      <div class="search">
+        <div class="search_list">
+          <select name="shopsArea" id="" v-model="searchArea">
+            <option selected>エリアで検索</option>
+            <option value="東京">東京</option>
+            <option value="大阪">大阪</option>
+            <option value="福岡">福岡</option>
+          </select>
+          <select name="shopsGenre" id="" v-model="searchGenre">
+            <option hidden>ジャンルで検索</option>
+            <option value="寿司">寿司</option>
+            <option value="焼肉">焼肉</option>
+            <option value="居酒屋">居酒屋</option>
+            <option value="イタリアン">イタリアン</option>
+            <option value="ラーメン">ラーメン</option>
+          </select>
+          <input type="text" v-model="searchAll" placeholder="店名で検索">
+        </div>
+      </div>
     </div>
       <div class="shop_card">
         <tr v-for="item in shop_list" :key="item.item_id">
@@ -16,7 +32,7 @@
            <p class="shop_genre">#{{ item.shop_genre }}</p>
           </div>
           <button class="shop_button" @click="detail(item.shop_id)">詳しくみる</button>
-          <button class="heart"></button>
+          <button class="heart" @click="heart"></button>
 
         </div>
         </tr>
@@ -53,6 +69,9 @@ export default {
   },
    detail(shop_id) {
    this.$router.push({path: '/detail/'+shop_id,params:{shop_id:shop_id}});
+  },
+  heart(){
+
   }
   },
     created(){
@@ -130,6 +149,10 @@ export default {
   padding:10px 10px 0px 10px;
   display: flex;
 
+}
+.search_list{
+  display: flex;
+  padding:0px 0px 10px 10px;
 }
 </style>
 

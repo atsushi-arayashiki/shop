@@ -1,10 +1,20 @@
 <template>
   <div>
     <Header />
-    <div class="detail_shop_list">
-     <p>{{ shop_id }}</p>
-     <p>{{ shop_name }}</p>
-     <p>{{shop_area}}</p>
+      <div class="detail shop">
+       <div class="detail_shop_list">
+        <p>{{ detail_list.shop_name }}</p>
+        <img :src="detail_list.shop_image"  class="detail_img"/>
+        <p>#{{ detail_list.shop_area }}</p>
+        <p>#{{detail_list.shop_genre}}</p>
+        <p>{{detail_list.shop_data}}</p>
+      </div>
+    </div>
+
+    <div class="resavations">
+      <div class="resavations-card">
+       <p>予約</p>
+      </div>
     </div>
   </div>
 </template>
@@ -23,7 +33,8 @@ export default {
       {shop_image: ""},
       {shop_name: ""},
       {shop_area: ""},
-      {shop_genre: ""}
+      {shop_genre: ""},
+      {shop_data:""}
       ]
 
     };
@@ -47,8 +58,25 @@ export default {
 
 <style>
 .detail_shop_list{
-  color: red;
+  width: 400px;
+  height: 500px;
+  background-color:rgb(85, 192, 85);
+  position: absolute;
+  top:150px;
+  left: 13%;
+  padding:30px;
 }
-  
+.detail_img{
+  width: 100%;
+}
+.resavations-card{
+  width: 400px;
+  height: 500px;
+  background-color:rgb(85, 192, 85);
+  position: absolute;
+  top:150px;
+  right:13%;
+  padding:30px;
+}
 </style>
 

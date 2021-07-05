@@ -28,13 +28,15 @@ export default new Vuex.Store({
         {
           email: email,
           password: password,
+
         }
       );
       const responseUser = await axios.get(
-        "http://127.0.0.1:8000/api/users",
+        "http://127.0.0.1:8000/api/user",
         {
           params: {
             email: email,
+            
           },
         }
       );
